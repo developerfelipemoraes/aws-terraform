@@ -3,11 +3,8 @@ variable "aws_region" {
   type        = string
 }
 
-
-
 module "kms" {
   source       = "./modules/kms"
-  
 }
 
 module "fila_a" {
@@ -40,7 +37,6 @@ module "ecs_consumer" {
 
 module "ecr_ecs_consumer" {
   source = "./modules/ecr"
-
   name        = "poc-ecs-consumer"
   max_images = 10
 }
@@ -48,7 +44,6 @@ module "ecr_ecs_consumer" {
 
 module "codebuild_ecs_consumer" {
   source = "./modules/codebuild"
-
   project_name     = "ecs-consumer-build"
   github_repo_url  = "https://github.com/developerfelipemoraes/poc-ecs-python"
 }
