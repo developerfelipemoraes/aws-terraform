@@ -64,4 +64,34 @@ module "codebuild_ecs_consumer" {
   source = "./modules/codebuild"
   project_name     = "ecs-consumer-build"
   github_repo_url  = "https://github.com/developerfelipemoraes/poc-ecs-python"
+  environment_variables = [
+    {
+      name  = "AWS_DEFAULT_REGION"
+      value = var.region
+    },
+    {
+      name  = "AWS_ACCOUNT_ID"
+      value = var.aws_account_id
+    },
+    {
+      name  = "IMAGE_REPO_NAME"
+      value = module.ecr_ecs_consumer.name
+    },
+    {
+      name  = "IMAGE_TAG"
+      value = "latest"
+    },
+    {
+       name  = "CONTAINER_NAME"
+       value = "app"
+    },
+    {
+       name = "SERVICE_NAME"
+       value = "poc-ecs-consumer"
+    },
+    {
+       name = "CLUSTER_NAME"
+       value = "poc-ecs-consumer"
+    }
+  ]
 }

@@ -65,6 +65,14 @@ resource "aws_codebuild_project" "this" {
     image           = "aws/codebuild/standard:7.0"
     type            = "LINUX_CONTAINER"
     privileged_mode = true
+
+    dynamic "environment_variable" {
+      for_each = var.environment_variables
+      content {
+        name  = environment_variable.value.name
+        value = environment_variable.value.value
+      }
+    }
   }
 
   source {
