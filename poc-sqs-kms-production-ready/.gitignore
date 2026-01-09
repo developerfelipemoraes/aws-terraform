@@ -1,1 +1,10 @@
 ./terraform
+# Arquivos de estado do Terraform (SENSÍVEIS - NUNCA COMITAR)
+*.tfstate
+*.tfstate.*
+
+# Diretório de plugins e módulos
+.terraform/
+
+# Arquivos de variáveis com segredos (boa prática)
+*.tfvars
