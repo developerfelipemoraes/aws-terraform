@@ -100,6 +100,4 @@ Certifique-se de ter o Terraform instalado e credenciais AWS configuradas.
 
 ---
 
-## 📝 Observações sobre "ARM Templates"
 
-Notei que você mencionou "ARM Template". ARM Templates são específicos para **Microsoft Azure**. Como estamos trabalhando com **AWS**, a tecnologia equivalente (e que estamos usando aqui) é o **Terraform** (ou CloudFormation). A lógica é a mesma: definir infraestrutura como código! 😉
