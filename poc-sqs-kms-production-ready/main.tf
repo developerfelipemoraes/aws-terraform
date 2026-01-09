@@ -47,3 +47,10 @@ module "codebuild_ecs_consumer" {
   project_name     = "ecs-consumer-build"
   github_repo_url  = "https://github.com/developerfelipemoraes/poc-ecs-python"
 }
+
+module "lambda_consumer" {
+  source       = "./modules/lambda-consumer"
+  project_name = "poc-lambda-consumer-fila-a"
+  queue_arn    = module.fila_a.queue_arn
+  kms_key_arn  = module.kms.key_arn
+}
