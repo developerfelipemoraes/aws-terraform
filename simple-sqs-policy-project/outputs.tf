@@ -1,19 +1,23 @@
-output "sqs_queue_url" {
-  value       = aws_sqs_queue.this.id
-  description = "The URL of the SQS queue"
+output "fila_a_url" {
+  value = module.fila_a.queue_url
 }
 
-output "sqs_queue_arn" {
-  value       = aws_sqs_queue.this.arn
-  description = "The ARN of the SQS queue"
+output "fila_b_url" {
+  value = module.fila_b.queue_url
+}
+
+output "fila_c_url" {
+  value = module.fila_c.queue_url
 }
 
 output "kms_key_arn" {
-  value       = aws_kms_key.this.arn
-  description = "The ARN of the KMS key"
+  value = module.kms.key_arn
 }
 
-output "iam_policy_arn" {
-  value       = aws_iam_policy.read_policy.arn
-  description = "The ARN of the IAM policy to attach to Lambda or ECS roles"
+output "kms_key_policy_arn" {
+  value = module.kms_key_policy.policy_arn
+}
+
+output "sqs_queue_policy_arn" {
+  value = module.sqs_queue_policy.policy_arn
 }
