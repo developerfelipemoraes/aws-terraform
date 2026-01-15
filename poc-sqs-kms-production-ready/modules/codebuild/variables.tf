@@ -10,3 +10,11 @@ variable "log_group_name" {
   type    = string
   default = "/codebuild/ecs-consumer-build"
 }
+
+variable "environment_variables" {
+  type = list(object({
+    name  = string
+    value = string
+  }))
+  default = []
+}
